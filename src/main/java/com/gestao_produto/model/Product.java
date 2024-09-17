@@ -1,4 +1,4 @@
-package com.gestao_produto.service;
+package com.gestao_produto.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
 
-public class ProductServece {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
