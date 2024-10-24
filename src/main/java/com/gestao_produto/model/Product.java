@@ -1,5 +1,6 @@
 package com.gestao_produto.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +13,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @JsonProperty("name")
     private String name;
+    @JsonProperty("preco")
     private BigDecimal preco;
 
 
