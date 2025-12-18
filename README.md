@@ -34,5 +34,4 @@ Este projeto é uma **API RESTful** desenvolvida em **Java** para gerenciamento 
   "id": 1,
   "nome": "Notebook",
   "preco": 3500.00,
-  "quantidade": 10
 }
