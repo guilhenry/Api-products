@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/Api/Product")
 public class ProductController {
@@ -23,8 +24,15 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> creatProduct(Product product){
+    public ResponseEntity<Product> creatProduct(@RequestBody Product product){
         Product productAdd = productService.addProduct(product);
+        System.out.println("ID: " + product.getId());
+        System.out.println("Name: " + product.getName());
+        System.out.println("Preço: " + product.getPreco());
+
+        if (product.getName() == null || product.getPreco() == null) {
+            return ResponseEntity.badRequest().body(product); // Devolver o produto se houver erro
+        }
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
 
